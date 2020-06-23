@@ -234,7 +234,8 @@ HERO
 }
 .hero-underline{
     margin: 0 auto;
-    width: 7rem;
+    width: 15rem;
+    height: 0.35rem;
     margin-bottom: 1rem;
 }
 .hero-subtitle{
@@ -275,9 +276,23 @@ SKILLS
 }
 .skill-icon{
     color: var(--clr-blue);
-    font-size: 3rem;
+		font-size: 3rem;
+		transition: all 2s;
+		border-radius: 50%;
+		padding: 1.2rem;
+}
+.skill-icon:hover{ 
+	background: var(--clr-blue);
+}
+.skill-icon .fas{
+	transition: all 1s;
+}
+.skill-icon:hover .fas{
+	transform: scale(0.8);
+	color: var(--clr-white);
 }
 .skill-title{
+		margin-top: 1rem;
     font-size: 1.6rem;
     color: var(--clr-blue);
 }
@@ -287,9 +302,9 @@ SKILLS
 }
 @media screen and (min-width:768px){
     .skills-center{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        place-items: center;
+      display: grid;
+      grid-template-columns:1fr 1fr;
+      place-items: center;
     }
 }
 @media screen and (min-width:1170px){
@@ -311,7 +326,8 @@ ABOUT
     background: var(--clr-grey-10);
 }
 .about-info{
-    margin-bottom: 2rem;
+		margin-bottom: 2rem;
+		margin-right: 2rem;
 }
 .about-title{
     color: var(--clr-dark-blue);
@@ -322,8 +338,8 @@ ABOUT
     max-width: 40rem;
 }
 .about-video{
-    max-width: 28rem;
-    max-height: 17rem;
+    max-width: 31.5rem;
+		max-height: 25.5rem;
     border-radius: var(--radius);
 }
 
@@ -331,8 +347,12 @@ ABOUT
     .about-center{
         display: flex;
         justify-content: space-between;
-        align-self: center;
-    }
+				align-items: center;
+				flex: 0 1 calc(50% - 2rem);
+		}
+		/* .about-video{
+			flex: 0 1 calc(50);
+		} */
 }
 
 
@@ -344,7 +364,48 @@ SERVICES
 =========================
 */
 
+.service{
+	max-width: 35rem;
+	margin-bottom: 3rem;
+	background: var(--clr-platinum);
+	border-radius: var(--radius);
+	text-align: center;
+}
 
+.service-title{
+	background: var(--clr-blue);
+	padding: 0.8rem 0;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	color: var(--clr-white);
+	border-top-left-radius: var(--radius);
+	border-top-right-radius: var(--radius);
+	/* padding-left: 2rem; */
+	text-align: center;
+}
+.service-icon{
+	margin-right: 1rem;
+	color: var(--clr-dark-blue);
+	font-size: 1.3rem;
+}
+.service-text{
+	max-width: 30rem;
+	margin: 0 auto;
+	padding: 1rem 2rem;
+}
+
+@media screen and (min-width:768px){
+	.services-center{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem 3rem;
+	}
+}
+@media screen and (min-width:992px){
+	.services-center{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
 
 /* 
 =========================
