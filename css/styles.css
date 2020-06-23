@@ -1,0 +1,390 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* main colors */
+    --clr-dark-blue: #044389;
+    --clr-blue: #52b2cf;
+    --clr-light-blue: #7ec4cf;
+    --clr-orange:#eb5e28;
+    --clr-light-orange: #f7a072;
+    --clr-brown:#fcf6b1;
+    --clr-light-brown:#eddea4;
+  /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10:hsl(207, 36%, 95%);
+  /* other colors  */
+    --clr-white: #fdfdfc;
+    --clr-black: #02020a;
+    --clr-platinum: #E5E5E5;
+  /* font families */
+    --ff-primary:'Philosopher', sans-serif;
+    --ff-secondary:'Dancing Script', cursive;
+  /* transition */
+    --transition: all 0.3s linear;
+  /* spacing */
+    --spacing: 0.25rem;
+  /* radius */
+    --radius: 0.65rem;
+  /* box shadow */
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* width */
+    --max-width: 1170px;
+}
+
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:375px){
+  *{
+    overflow-x: hidden;
+    }
+}
+
+body {
+    font-family: var(--ff-primary);
+    background: var(--clr-white);
+    color: var(--clr-grey-5);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+img{
+    width: 100%;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+}
+h1 {
+    font-size: 3rem;
+}   
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 1.25rem;
+}
+h4 {
+    font-size: 0.9rem;
+}
+p {
+    margin-bottom: 1.25rem;
+    color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+    h1 {
+    font-size: 4rem;
+    }
+    h2 {
+    font-size: 2.5rem;
+    }
+    h3 {
+    font-size: 1.75rem;
+    }
+    h4 {
+    font-size: 1.1rem;
+    }
+    body {
+    font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+    line-height: 1;
+    }
+}
+
+/*  global classes */
+
+.btn {
+    text-transform: uppercase;
+    background: var(--clr-light-blue);
+    color: var(--clr-white);
+    padding: 0.375rem 0.75rem;
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    font-weight: 700;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    border: 2px solid var(--clr-light-blue);
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    /* border-radius: var(--radius); */
+}
+.btn:hover {
+    color: var(--clr-dark-blue);
+    background: transparent;
+    border-color: var(--clr-dark-blue);
+}
+
+/* section */
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+@media screen and (min-width: 992px) {
+    .section-center {
+    width: 95vw;
+    }
+}
+
+.underline{
+    width: 3rem;
+    height: 0.25rem;
+    margin-bottom: 1.2rem;
+    background: var(--clr-blue);
+    /* margin-left: auto;
+    margin-right: auto; */
+    transition: all 3s;
+}
+
+.section-title{
+    padding:4rem 0 2rem 0;
+    /* text-align: center; */
+    padding-left: 2rem;
+    color: var(--clr-orange);
+}
+.section-title:hover .underline{
+    width: 10rem;
+    background: var(--clr-orange);
+}
+
+
+
+
+
+
+
+/* 
+=========================
+NAVBAR
+=========================
+*/
+
+
+/* 
+=========================
+HERO
+=========================
+*/
+
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../images/hero-bcg.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    position: relative;
+}
+.hero-banner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.hero-title{
+    font-size: 5rem;
+    text-transform: uppercase;
+    color: var(--clr-white);
+}
+.hero-underline{
+    margin: 0 auto;
+    width: 7rem;
+    margin-bottom: 1rem;
+}
+.hero-subtitle{
+    color: var(--clr-white);
+    font-family: var(--ff-secondary);
+}
+.hero-btn{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: var(--radius);
+}
+.hero-btn:hover{
+    color: var(--clr-white);
+    border-color: var(--clr-white);
+}
+@media screen and (max-width:520px){
+    .hero-title{
+        font-size: 3.5rem;
+    }
+    .hero-btn{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+/* 
+=========================
+SKILLS
+=========================
+*/
+
+.skills-center{
+    text-align: center;
+}
+.skill{
+    padding:0 2rem 0.5rem 2rem;
+}
+.skill-icon{
+    color: var(--clr-blue);
+    font-size: 3rem;
+}
+.skill-title{
+    font-size: 1.6rem;
+    color: var(--clr-blue);
+}
+.skill-text{
+    max-width: 25rem;
+    margin: 1rem auto 2rem auto;
+}
+@media screen and (min-width:768px){
+    .skills-center{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+    }
+}
+@media screen and (min-width:1170px){
+    .skills-center{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+
+
+/* 
+=========================
+ABOUT
+=========================
+*/
+
+.about{
+    background: var(--clr-grey-10);
+}
+.about-info{
+    margin-bottom: 2rem;
+}
+.about-title{
+    color: var(--clr-dark-blue);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+.about-text{
+    max-width: 40rem;
+}
+.about-video{
+    max-width: 28rem;
+    max-height: 17rem;
+    border-radius: var(--radius);
+}
+
+@media screen and (min-width:992px){
+    .about-center{
+        display: flex;
+        justify-content: space-between;
+        align-self: center;
+    }
+}
+
+
+
+
+/* 
+=========================
+SERVICES
+=========================
+*/
+
+
+
+/* 
+=========================
+PORTFOLIO
+=========================
+*/
+
+
+/* 
+=========================
+STATS
+=========================
+*/
+
+
+/* 
+=========================
+TEAM
+=========================
+*/
+
+
+/* 
+=========================
+REVIEWS
+=========================
+*/
+
+
+/* 
+=========================
+CONTACT
+=========================
+*/
+
+
+/* 
+=========================
+FOOTER
+=========================
+*/
+
+
