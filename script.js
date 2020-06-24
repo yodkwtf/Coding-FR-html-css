@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  $("#links").hide();
-  $("#menu-btn").click(changeNav);
+  $(".nav-inks").show();
+  $(".nav-btn").click(changeNav);
 
   function changeNav() {
-    $("#links").toggle(2000);
-    $("#menu-btn").toggleClass("turn");
+    $(".nav-links").toggle(2000);
+    $(".nav-btn").toggleClass("turn");
   }
 });
