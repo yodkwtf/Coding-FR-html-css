@@ -213,7 +213,7 @@ NAVBAR
     width: 100%;
     z-index: 5;
     box-shadow: var(--dark-shadow);
-    padding: 0 1rem;
+    padding: 0.5rem 1.5rem;
 }
 @media screen (max-width:400px){
     .nav{
@@ -234,10 +234,14 @@ NAVBAR
     margin: 0 auto;
 }
 .nav-header{
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    place-items: center;
 }
 .nav-logo{
     color: var(--clr-white);
@@ -258,7 +262,7 @@ NAVBAR
     font-size: 2.5rem;
     transition: var(--transition);
     animation: nav 3s 2;
-    /* align-self: baseline; */
+    margin-bottom: 0;
 }
 .nav-btn:hover{
     color: var(--clr-dark-blue);
