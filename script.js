@@ -21,28 +21,3 @@ const date = (document.getElementById(
 
 
 
-// ********** smooth scroll ************
-// select links
-const scrollLinks = document.querySelectorAll(".scroll-link");
-scrollLinks.forEach(link => {
-  link.addEventListener("click", e => {
-    // prevent default
-    e.preventDefault();
-    links.classList.remove("show-links");
-
-    const id = e.target.getAttribute("href").slice(1);
-    const element = document.getElementById(id);
-    //
-    console.log(element);
-
-    let position = element.offsetTop - 62;
-    console.log(position);
-
-    window.scrollTo({
-      left: 0,
-      // top: element.offsetTop,
-      top: position,
-      behavior: "smooth"
-    });
-  });
-});
