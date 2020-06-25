@@ -60,7 +60,7 @@ Global Styles
     box-sizing: border-box;
 }
 
-@media screen and (max-width:375px){
+@media screen and (max-width:400px){
   *{
     overflow-x: hidden;
     }
@@ -215,6 +215,20 @@ NAVBAR
     box-shadow: var(--dark-shadow);
     padding: 0 1rem;
 }
+@media screen (max-width:400px){
+    .nav{
+        padding: 0.5rem 1.5rem;
+    }
+    .nav-link{
+        margin-bottom: 6rem;
+    }
+    .navbar{
+        width: 50%;
+    }
+    .nav-btn{
+        align-self: end;
+    }
+}
 .nav-center{
     max-width: 1400px;
     margin: 0 auto;
@@ -244,7 +258,7 @@ NAVBAR
     font-size: 2.5rem;
     transition: var(--transition);
     animation: nav 3s 2;
-    align-self: baseline;
+    /* align-self: baseline; */
 }
 .nav-btn:hover{
     color: var(--clr-dark-blue);
