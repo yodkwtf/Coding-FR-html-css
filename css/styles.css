@@ -37,7 +37,7 @@ Variables
   /* spacing */
     --spacing: 0.25rem;
   /* radius */
-    --radius: 0.65rem;
+    --radius: 0.25rem;
   /* box shadow */
     --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -215,7 +215,7 @@ NAVBAR
     box-shadow: var(--dark-shadow);
     padding: 0.5rem 1.5rem;
 }
-@media screen (max-width:400px){
+@media screen and (max-width:400px){
     .nav-link{
         margin-bottom: 4rem;
     }
@@ -231,8 +231,8 @@ NAVBAR
     place-items: center;
 }
 .nav-logo{
-    color: var(--clr-white);
-    background: var(--clr-blue);
+    color: var(--clr-blue);
+    /* background: var(--clr-blue); */
     font-family: var(--ff-secondary);
     font-size: 2.2rem;
     margin: -10px 0;
@@ -240,9 +240,10 @@ NAVBAR
     border-radius: 5px;
     transition: var(--transition);
     align-self: baseline;
+    text-shadow: var(--dark-shadow);
 }
 .nav-logo:hover{
-    background: var(--clr-dark-blue);
+    color: var(--clr-dark-blue);
     
 }
 .nav-btn{
@@ -350,6 +351,9 @@ HERO
     min-height: 100vh;
     position: relative;
 }
+.pages {
+    min-height: 60vh;
+}
 .hero-banner{
     position: absolute;
     top: 50%;
@@ -370,6 +374,7 @@ HERO
     margin-bottom: 1rem;
 }
 .hero-subtitle{
+    margin-top: 2rem;
     color: var(--clr-white);
     font-family: var(--ff-secondary);
 }
@@ -398,6 +403,7 @@ HERO
 SKILLS
 =========================
 */
+
 .skills{
     text-align: center;
 }
@@ -460,8 +466,8 @@ ABOUT
     background: var(--clr-grey-10);
 }
 .about-info{
-		margin-bottom: 2rem;
-		margin-right: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
 }
 .about-title{
     color: var(--clr-dark-blue);
@@ -481,7 +487,11 @@ ABOUT
     .about-center{
         display: grid;
         grid-template-columns: 1fr auto;
-		}
+        align-items: center;
+    }
+    .about-info {
+        margin-bottom: 0;
+    }
 }
 @media screen and (max-width:578px){
     .about-video{
@@ -562,7 +572,7 @@ PORTFOLIO
 }
 .single-portfolio{
     border-radius: var(--radius);
-    background: var(--clr-grey-8);
+    background: var(--clr-black);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -576,6 +586,7 @@ PORTFOLIO
 .portfolio-image{
     border-radius: var(--radius);
     transition: all 2s;
+    object-fit: cover;
 }
 .portfolio-info{
     padding: 0.8rem 1.2rem;
@@ -583,7 +594,7 @@ PORTFOLIO
     justify-content: space-between;
     font-size: 1.5rem;
     align-items: center;
-    background: var(--clr-grey-8);
+    background: var(--clr-white);
     border-bottom-left-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
     transition: all 2s;
@@ -595,18 +606,18 @@ PORTFOLIO
 }
 .portfolio-info-title{
     font-size: 1.5rem;
-    color: var(--clr-dark-blue);
+    color: var(--clr-blue);
+    margin-bottom: 0;
 }
 .portfolio-icon .fas{
-    color: var(--clr-blue);
-    background: var(--clr-white);
+    color: var(--clr-white);
+    background: var(--clr-blue);
     border-radius: 50%;
     padding:0.4rem;
     transition: var(--transition);
 }
 .portfolio-icon:hover .fas{
-    background: var(--clr-dark-blue);
-    transform: translateY(-5px);
+    transform: rotate(360deg);
 }
 .portfolio-link{
     text-align: center;
@@ -672,7 +683,7 @@ TEAM
     box-shadow: var(--dark-shadow);
 }
 .member-image{
-    height: 17rem;
+    height: 12rem;
     -o-object-fit: cover;
        object-fit: cover;
     border-top-left-radius: var(--radius);
@@ -715,14 +726,13 @@ TEAM
         grid-template-columns: 1fr 1fr;
         gap: 3rem 3rem;
     }
+    .member{
+        margin-bottom: 0;
+    }
 }
 @media screen and (min-width:1170px){
     .team-center{
         grid-template-columns: repeat(4,1fr);
-        gap: 0rem 3rem;
-    }
-    .member{
-        margin-bottom: 0;
     }
 }
 
@@ -737,10 +747,13 @@ REVIEWS
 .reviews{
     background: rgb(80,80,80);
 }
+.review{
+    padding: 1rem 2rem;
+}
 .review-image{
     border-radius: 50%;
     margin-bottom: 1.5rem;
-    height: 18rem;
+    height: 15rem;
     -o-object-fit: cover;
        object-fit: cover;
 }
@@ -749,7 +762,7 @@ REVIEWS
     font-size: 1.4rem;
 }
 .review-job{
-    color: var(--clr-black);
+    color: var(--clr-grey-8);
     font-size: 1.1rem;
 }
 .review-text{
@@ -762,7 +775,7 @@ REVIEWS
 .reviews-center{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    gap: 3rem 4rem;
+    gap: 3rem 3rem;
 }
 
 
@@ -852,7 +865,9 @@ CONTACT
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0 4rem;
+    align-items: center;
 }
+.contact-info{margin-bottom: 0;}
 .contact-info-item{
     font-size: 1.8rem;
 }
@@ -870,10 +885,10 @@ FOOTER
     text-align: center;
 }
 .footer-center{
-    padding: 3rem 0;
+    padding: 3rem 0 2rem;
 }
 .footer-info{
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 .footer-text{
     font-size: 1.2rem;
